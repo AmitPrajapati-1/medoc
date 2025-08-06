@@ -1,0 +1,10 @@
+import  express  from "express";
+import dotenv from 'dotenv';
+import sampleroutes from './routes/sample';
+import authroutes from './routes/auth';
+dotenv.config();
+const app = express();
+app.use(express.json());    
+app.use('/samples', sampleroutes);
+app.use('/auth', authroutes);
+export default app;
